@@ -1,0 +1,87 @@
+# mkdocs.yml – Final Clean Enterprise Version (2025)
+
+site_name: CyberForgeEx
+site_description: Project Documentation Portal
+site_url: https://cyberforgeex.github.io/docs/
+
+repo_url: null                              # Hides GitHub icon + repo link completely
+edit_uri: null                              # Optional: removes "Edit" buttons if you want
+
+theme:
+  name: material
+  language: en
+
+  # Logo & Favicon
+  logo: assets/icons/cfh.svg          # ← this is the only line you need
+  favicon: assets/icons/cfh.svg       # optional: same icon for browser tab
+
+  # Google Fonts – loaded automatically by Material
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  # Clean professional colors
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  # This is what creates the exact layout you want
+  features:
+    - navigation.tabs                # Top horizontal tabs
+    - navigation.tabs.sticky         # Stays fixed when scrolling
+    - navigation.sections            # Enables collapsible sections (critical!)
+    - navigation.expand              # Auto-expand current section
+    - navigation.top                 # Back-to-top button
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.integrate
+    - header.autohide                # Optional: cleaner when scrolling
+
+  icon:
+    repo: null                       # Ensures no GitHub icon appears anywhere
+
+nav:
+  - CyberForgeEx:
+      - Home: index.md
+
+  - Projects:
+      - ASM Scratchpad: asm-scratchpad/introduction.md
+      - BlackHatOps: blackhatops/introduction.md
+      - IdeaForgeAI: ideaforgeai/introduction.md
+      - PowerBash: powerbash/introduction.md
+      - Windows Pain Killer: windows-pain-killer/introduction.md
+
+# Optional: minimal safe plugins (all work without git repo)
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+# Explicit Google Fonts loading (ensures fonts are loaded)
+extra_css:
+  - https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap
+
+# Footer configuration
+extra:
+  generator: false
+  
+  # Social links in footer
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/CyberForgeEx
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/vasan-dilaksan/
+
+# Copyright notice
+copyright: Copyright &copy; 2025 Vasan Dilaksan
